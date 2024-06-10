@@ -10,7 +10,7 @@
 	function setTheme(newTheme) {
 		if (newTheme !== "light" && newTheme !== "dark") {
 			return console.warn(
-				`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`,
+				`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`
 			);
 		}
 
@@ -28,6 +28,16 @@
 		colorThemeMetaTag.setAttribute("content", `hsl(${bgColour})`);
 		if (typeof localStorage !== "undefined") {
 			localStorage.setItem("theme", newTheme);
+		}
+
+		// change the favicon
+		const favicon = document.querySelector("link[rel='icon']");
+		const darkFavicon = "/favicon-dark.ico";
+		const lightFavicon = "/favicon.ico";
+		if (newTheme === "light") {
+			favicon.href = lightFavicon;
+		} else {
+			favicon.href = darkFavicon;
 		}
 	}
 
