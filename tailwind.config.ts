@@ -33,7 +33,7 @@ export default {
 					"@apply underline underline-offset-2": {},
 				},
 				".title": {
-					"@apply text-2xl font-semibold text-accent-2": {},
+					"@apply text-4xl font-[800] text-accent-2": {},
 				},
 			});
 		}),
@@ -50,7 +50,9 @@ export default {
 			},
 			fontFamily: {
 				// Add any custom fonts here
-				sans: [...fontFamily.sans],
+				sans: [
+					'Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"',
+				],
 				serif: [...fontFamily.serif],
 			},
 			transitionProperty: {
