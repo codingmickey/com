@@ -29,6 +29,16 @@
 		if (typeof localStorage !== "undefined") {
 			localStorage.setItem("theme", newTheme);
 		}
+
+		// change the favicon
+		const favicon = document.querySelector("link[rel='icon']");
+		const darkFavicon = "/favicon-dark.ico";
+		const lightFavicon = "/favicon.ico";
+		if (newTheme === "light") {
+			favicon.href = lightFavicon;
+		} else {
+			favicon.href = darkFavicon;
+		}
 	}
 
 	// initial setup
