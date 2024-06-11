@@ -5,18 +5,18 @@ import { Image } from "astro:assets";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
-	title: "About"
+	title: "About",
 };
 ---
 
 <PageLayout meta={meta}>
-	<div class='space-y-6'>
-		<h1 class='title'>About</h1>
-		<div class='flex justify-center'>
+	<div class="space-y-6">
+		<h1 class="title">About</h1>
+		<div class="flex justify-center">
 			<Image
 				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				fetchpriority='high'
-				loading='eager'
+				fetchpriority="high"
+				loading="eager"
 				src={aboutImg}
 			/>
 		</div>
