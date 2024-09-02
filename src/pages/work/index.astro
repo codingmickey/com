@@ -5,27 +5,27 @@ import { getCollection } from "astro:content";
 // import BottomLayout from "@layouts/BottomLayout.astro";
 const WORK: { DESCRIPTION: string; TITLE: string } = {
 	DESCRIPTION: "Places I have worked.",
-	TITLE: "Work"
+	TITLE: "Work",
 };
 
 const collection = await getCollection("work");
 
 collection.sort(
-	(a, b) => new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime()
+	(a, b) => new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime(),
 );
 
 const work = await Promise.all(
 	collection.map(async (item) => {
 		const { Content } = await item.render();
 		return { ...item, Content };
-	})
+	}),
 );
 
 function formatWorkDate(input: Date | string) {
 	if (typeof input === "string") return input;
 
 	const month = input.toLocaleDateString("en-US", {
-		month: "short"
+		month: "short",
 	});
 
 	const year = new Date(input).getFullYear();
@@ -58,29 +58,30 @@ function formatWorkDate(input: Date | string) {
 	<ul>
 		{
 			work.map((entry) => (
-				<li class='animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25'>
-					<div class='mb-4 text-sm'>
+				<li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
+					<div class="mb-4 text-sm">
 						{formatWorkDate(entry.data.startDate)} - {formatWorkDate(entry.data.endDate)}
 					</div>
 					<a
-						class='flex items-center gap-4'
+						class="flex items-center gap-4"
 						href={entry.data.companyURL}
-						rel='noopener noreferrer'
-						target='_blank'>
+						rel="noopener noreferrer"
+						target="_blank"
+					>
 						{entry.data.logo?.src ? (
 							<img
 								alt={entry.data.company}
-								class='w-48 grayscale dark:mix-blend-screen dark:invert'
+								class="w-48 grayscale dark:mix-blend-screen dark:invert"
 								src={entry.data.logo?.src}
 							/>
 						) : (
-							<h2 class='mb-2 text-2xl font-semibold text-black dark:text-white'>
+							<h2 class="mb-2 text-2xl font-semibold text-black dark:text-white">
 								{entry.data.company}
 							</h2>
 						)}
 					</a>
-					<h4 class='mb-2 text-xl font-semibold'>{entry.data.role}</h4>
-					<article class='prose dark:prose-invert'>
+					<h4 class="mb-2 text-xl font-semibold">{entry.data.role}</h4>
+					<article class="prose dark:prose-invert">
 						<entry.Content />
 					</article>
 				</li>
