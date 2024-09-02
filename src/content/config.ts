@@ -33,4 +33,17 @@ const post = defineCollection({
 	type: "content",
 });
 
-export const collections = { post };
+const work = defineCollection({
+	schema: ({ image }) =>
+		z.object({
+			company: z.string(),
+			companyURL: z.string().optional(),
+			endDate: z.union([z.date(), z.string()]),
+			logo: image().optional(),
+			role: z.string(),
+			startDate: z.date(),
+		}),
+	type: "content",
+});
+
+export const collections = { post, work };
