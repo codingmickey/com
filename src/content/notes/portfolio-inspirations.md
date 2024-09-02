@@ -1,0 +1,23 @@
+# Portfolio Inspiration
+
+- https://antfu.me/
+- Shiva Bhattacharjee ([github](https://github.com/ShivaBhattacharjee/portfolio-v2))
+- https://astro-sphere-demo.vercel.app
+- https://www.aleksandrhovhannisyan.com/
+- https://astro.build/themes/details/astro-micro/ - Steal some features from this for the portfolio
+- https://astro.build/themes/details/mia/ - get the rough illustration from this
+- https://github.com/nexxeln/nexxel.dev?tab=readme-ov-file - quite cleann
+- https://astro-paper.pages.dev/ - can copy some things from this too
+- https://github.com/iammatthias/com - this was a vibeee
+- https://jeandv.vercel.app/about - okay okay
+- https://n4gpal.framer.website/ - ek number
+- https://arikko.dev/ - first love
+- https://patrickcollison.com - WHAT A GOAT
+- https://looskie.com/work - I saw his post from twitter about the spotiyf thingy that he made :D
+- https://cdhiraj40.dev/ - just random I found
+- r3hbr.vercel.app - THIS IS EXACTLY WHAT I WANT
+- https://mrkaran.dev/ - ALSO THIS
+- https://bigyanpatel.vercel.app/ - oka okay
+- https://www.rohitfr.xyz/
+- https://kamranahmed.info/ - quite aesthetic
+- https://ansubkhan.com/blogs/crazy-tech-ride - cool one with neat animations
