@@ -32,7 +32,7 @@
 	}
 
 	html {
-		@apply scroll-smooth;
+		@apply w-screen overflow-x-hidden scroll-smooth;
 	}
 
 	body {
