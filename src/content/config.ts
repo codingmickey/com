@@ -46,4 +46,19 @@ const work = defineCollection({
 	type: "content",
 });
 
-export const collections = { post, work };
+const resources = defineCollection({
+	schema: z.object({
+		description: z.string(),
+		draft: z.boolean().default(false),
+		publishDate: z.string().transform((str) => new Date(str)),
+		tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
+		title: z.string(),
+		updatedDate: z
+			.string()
+			.optional()
+			.transform((str) => (str ? new Date(str) : undefined)),
+	}),
+	type: "content",
+});
+
+export const collections = { post, resources, work };

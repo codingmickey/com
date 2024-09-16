@@ -1,12 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import { Image } from "astro:assets";
-
 import FormattedDate from "../FormattedDate.astro";
 
 interface Props {
-	content: CollectionEntry<"post">;
+	content: CollectionEntry<"resources">;
 }
 
 const {
@@ -20,7 +18,7 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 };
 ---
 
-{
+<!-- {
 	data.coverImage && (
 		<div class='aspect-h-9 aspect-w-16 mb-6'>
 			<Image
@@ -32,8 +30,9 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 			/>
 		</div>
 	)
+} -->{
+	data.draft ? <span class='text-base text-red-500'>(Draft)</span> : null
 }
-{data.draft ? <span class='text-base text-red-500'>(Draft)</span> : null}
 <h1 class='title mb-5 sm:mb-3'>
 	{data.title}
 </h1>
