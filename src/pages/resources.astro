@@ -1,0 +1,21 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+const resources = await getCollection("resources");
+---
+
+<Base meta={{ title: "Resources page" }}>
+	<>
+		<h1 class='title mb-6'>Resources</h1>
+		<ul>
+			{
+				resources.map((resource) => (
+					<li key={resource.slug}>
+						<a href={`/resources/${resource.slug}/`}>{resource.data.title}</a>
+						<p>{resource.data.description}</p>
+					</li>
+				))
+			}
+		</ul>
+	</>
+</Base>
